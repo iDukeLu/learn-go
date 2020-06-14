@@ -15,5 +15,3 @@ func varDemo() {
 	fmt.Printf("自动类型检测：%v", j)
 	fmt.Printf("短声明，仅能在函数中使用：%v", k)
 }
-
-//
