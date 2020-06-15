@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	baseTypeConvDemo()
+	convStr()
 }
 
 // 基本数据：整数型、浮点型、复数型、字符型、字符串型
@@ -30,8 +30,9 @@ func baseTypeDemo() {
 // %T	输出 Go 语言语法格式的类型和值
 // %%	输出 % 本体
 // %d	整型以十进制方式显示
-// %U	Unicode 字符
 // %f	浮点数
+// %s	字符串
+// %U	Unicode 字符
 // %p	指针，十六进制方式显示
 func baseTypeConvDemo() {
 
@@ -44,13 +45,15 @@ func baseTypeConvDemo() {
 }
 
 func convStr() {
-	i0 := strconv.Itoa(99)
-	b := strconv.FormatBool(true)
-
 	// 整数、进制
-	i := strconv.FormatInt(99, 10)
-
+	//i := strconv.FormatInt(99, 10)
+	//i1 := strconv.Itoa(99)
+	//
 	// 浮点数、格式标记（b：二进制指数、e：十进制指数、E：十进制指数、f：没有指数、g：大指数、G：大指数）、精度、浮点类型
-	f := strconv.FormatFloat(99.9, 'f', 10, 64)
+	f := strconv.FormatFloat(99.9, 'f', 2, 64)
+	//
+	//b := strconv.FormatBool(true)
+
+	fmt.Printf("i: %s", f)
 
 }
