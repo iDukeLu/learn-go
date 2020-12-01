@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
-	"strconv"
 )
 
 // 基本数据类型、基本数据类型转换
 func main() {
+
 }
 
 // 基本数据：整数型、浮点型、复数型、字符型、字符串型
@@ -24,26 +24,32 @@ func baseTypeDemo() {
 	fmt.Printf("%T", i8)
 }
 
-func numConvDemo() {
+// 数字转字符串
+func str2NumDemo() {
 
 }
 
-func strConvDemo() {
+// 数字转字符串
+// 数字 -> 字符串，有两种方式：
+// 1. fmt.Sprintf()
+func num2strDemo() {
+	// 方式一：使用 fmt.Sprintf()
 	intStr := fmt.Sprintf("%d", 99)
-	//floatStr := fmt.Sprintf("%f", 99.9)
-	floatStr1 := fmt.Sprintf("%v", 99.9)
+	floatStr := fmt.Sprintf("%f", 99.9)
 	boolStr := fmt.Sprintf("%v", true)
-	fmt.Printf("intStr: %v, floatStr: %v, boolStr: %v", intStr, floatStr1, boolStr)
+
+	floatStr1 := fmt.Sprintf("%v", 99.9)
+	fmt.Printf("intStr: %v, floatStr: %v, boolStr: %v", intStr, floatStr, boolStr)
 
 	// 整数、进制
-	//i := strconv.FormatInt(99, 10)
-	//i1 := strconv.Itoa(99)
+	// i := strconv.FormatInt(99, 10)
+	// i1 := strconv.Itoa(99)
 	//
 	// 浮点数、格式标记（b：二进制指数、e：十进制指数、E：十进制指数、f：没有指数、g：大指数、G：大指数）、精度、浮点类型
-	f := strconv.FormatFloat(99.9, 'f', 2, 64)
+	//f := strconv.FormatFloat(99.9, 'f', 2, 64)
 	//
 	//b := strconv.FormatBool(true)
 
-	fmt.Printf("i: %s", f)
+	//fmt.Printf("i: %s", f)
 
 }
