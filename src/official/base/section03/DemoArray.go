@@ -6,7 +6,7 @@ func main() {
 
 }
 
-// 类型 [n]T 表示拥有 n 个 T 类型的值的数组。
+// 类型 [n]T 表示拥有 n 个 T 类型的值 的数组。
 func arrayDemo() {
 	var a [2]string
 	a[0] = "Hello"

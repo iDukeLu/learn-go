@@ -7,18 +7,38 @@ import (
 	"net/http"
 )
 
-func main() {
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		method := r.Method
-		name := r.FormValue("name")
+var (
+	m = map[string]func(http.ResponseWriter, *http.Request){
+		"/bye": sayBye,
+		"post": post,
+	}
+)
 
-		log.Println("Starting v1 server ...")
-		w.Write([]byte("httpserver v1"))
-		log.Printf("path: /, method: %v, param: %v", method, name)
-		_, _ = w.Write([]byte("httpserver v1"))
-	})
-	http.HandleFunc("/bye", sayBye)
-	http.HandleFunc("/post", post)
+type User struct {
+	Name string
+}
+
+type UserService interface {
+	getName() string
+}
+
+func main() {
+	userService := User{"11111"}
+	userService.getName()
+	fmt.Print(userService.getName())
+}
+
+func (user User) getName() string {
+	return user.Name
+}
+
+func httpDemo() {
+	//for paths, handler := range m {
+	//	for path := range paths {
+	//		http.HandleFunc(path, handler)
+	//	}
+	//
+	//}
 	log.Println("Starting v1 server ...")
 	log.Fatal(http.ListenAndServe(":8090", nil))
 }
@@ -40,4 +60,35 @@ func post(w http.ResponseWriter, r *http.Request) {
 type Post struct {
 	Name string `json:"name"`
 	Pass string `json:"pass"`
+}
+
+func a() {
+	adder(Post{"", ""})
+	b()
+}
+
+func b() func() {
+	return func() {
+
+	}
+}
+
+func adder(p Post) func(int) int {
+	sum := 0
+
+	g := GetMapping{}
+	method := g.method
+	return func(x int) int {
+		sum += x
+		return sum
+	}
+}
+
+type RequestMapping struct {
+	path   []string
+	method string
+}
+
+type GetMapping struct {
+	RequestMapping
 }
