@@ -26,8 +26,8 @@ func main() {
 	u := User{}
 
 	// 结构体字段使用点号来访问。
-	fmt.Print(u.Name)
+	fmt.Println("u.Name：" + u.Name)
 
 	// 结构体字段允许我们使用隐式间接引用，直接写 p.X 就可以。
-	fmt.Print(&u.Name)
+	fmt.Println("&u.Name：" + (&u).Name)
 }

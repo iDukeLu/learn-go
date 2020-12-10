@@ -5,6 +5,5 @@ func main() {
 }
 
 func sliceDemo() {
-	var s []string
-	s[1] = "aaa"
+	s := make([]string, 10)
 }
