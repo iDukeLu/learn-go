@@ -9,8 +9,8 @@ import (
 
 var (
 	m = map[string]func(http.ResponseWriter, *http.Request){
-		"/bye": sayBye,
-		"post": post,
+		"/bye":  sayBye,
+		"/post": post,
 	}
 )
 
