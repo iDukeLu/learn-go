@@ -6,7 +6,7 @@ func main() {
 	mapDemo4()
 }
 
-// 映射的零值为 nil 。nil 映射既没有键，也不能添加键。
+// 映射的零值为 nil。nil 映射既没有键，也不能添加键。
 // make 函数会返回给定类型的映射，并将其初始化备用。
 func mapDemo1() {
 	var m map[string]string
