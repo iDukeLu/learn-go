@@ -1,0 +1,6 @@
+server:
+  port: 8080
+datasource:
+  url: dbc:mysql://rm-wz9gtu4pe3f6vom022o.mysql.rds.aliyuncs.com:3306/ideamake_mc?useUnicode=true&useSSL=false&serverTimezone=Asia/Shanghai&autoReconnect=true&characterEncoding=utf8
+  username: ideamake_dbuser
+  password: 1a!gHco@d2mrgf^*^4lwGpB^

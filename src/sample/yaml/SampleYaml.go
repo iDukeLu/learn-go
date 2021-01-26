@@ -5,15 +5,21 @@ import (
 	"fmt"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
+	"os"
 )
 
 //定义conf类型
 //类型里的属性，全是配置文件里的属性
 type conf struct {
-	Host   string `yaml: "host"`
-	User   string `yaml:"user"`
-	Pwd    string `yaml:"pwd"`
-	Dbname string `yaml:"dbname"`
+	Server struct {
+		Port int `yaml:"port"`
+	} `yaml:"server"`
+
+	Datasource struct {
+		Url      string `yaml:"url"`
+		Username string `yaml:"username"`
+		Password string `yaml:"password"`
+	} `yaml:"datasource"`
 }
 
 func main() {
@@ -38,7 +44,8 @@ func main() {
 //并转换成conf对象
 func (c *conf) getConf() *conf {
 	//应该是 绝对地址
-	yamlFile, err := ioutil.ReadFile("E:\\Program\\go2\\goPath\\src\\xingej-go\\xingej-go\\xingej-go666\\lib\\yaml\\conf.yaml")
+	str, _ := os.Getwd()
+	yamlFile, err := ioutil.ReadFile(str + "/src/sample/yaml/application.yml")
 	if err != nil {
 		fmt.Println(err.Error())
 	}

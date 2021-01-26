@@ -41,6 +41,7 @@ func InitDB() {
 
 //查询单行
 func QueryOne(DB *sql.DB) {
+	defer DB.Close()
 	user := new(Visitor) //用new()函数初始化一个结构体对象
 	row := DB.QueryRow("select id,open_id,nickname from im_visitor where id=?", 597923011)
 	//row.scan中的字段必须是按照数据库存入字段的顺序，否则报错
