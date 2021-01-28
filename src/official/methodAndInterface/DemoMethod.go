@@ -1,9 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	methodDemo3()
+	methodDemo4()
 }
 
 // Go 没有类。不过你可以为结构体类型定义方法。
@@ -63,6 +65,13 @@ func (user *User) setName(name string) {
 // 以指针为接收者的方法，被调用时，接收者既能为值又能为指针
 // 以值为参数的函数，必须接受一个值
 // 以值为接收者的方法，被调用时，接收者既能为值又能为指针
+// 使用指针接收者的原因有二：
+//	首先，方法能够修改其接收者指向的值。
+//	其次，这样可以避免在每次调用方法时复制该值。若值的类型为大型结构体时，这样做会更加高效。
 func methodDemo4() {
+
+}
+
+func func1() {
 
 }
